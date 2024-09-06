@@ -6,9 +6,10 @@ import {
   updateAllProduct,
   updateSingleProduct,
   deleteProduct,
-} from "../controller/products";
+} from "../controllers/products";
 
-import { validateProduct } from "../validate/productsValidate";
+import { validateSchema } from "../validates/Validate";
+import { productsSchemaJoi } from "../schemas/productSchema";
 const router = Router();
 
 //get single item
@@ -18,10 +19,10 @@ router.get("/:id", getSingleProduct);
 router.get("/", getAllProducts);
 
 //create item
-router.post("/", validateProduct, createProduct);
+router.post("/", validateSchema(productsSchemaJoi), createProduct);
 
 //update all item
-router.put("/:id" , validateProduct, updateAllProduct);
+router.put("/:id", validateSchema, updateAllProduct);
 
 //update single item
 router.patch("/:id", updateSingleProduct);

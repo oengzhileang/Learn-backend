@@ -13,8 +13,8 @@ const productsSchema = new Schema<ProductsProps>(
   {
     Pname: {
       type: String,
-      required:true,
-      unique:true,
+      required: true,
+      trim: true,
     },
     Pprice: {
       type: Number,

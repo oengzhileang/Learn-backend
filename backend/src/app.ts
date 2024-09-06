@@ -1,8 +1,9 @@
 import express from "express";
-import { getRequestMethod } from "./middleware/getMethod";
-import { requestTime } from "./middleware/requestTime";
+import { getRequestMethod } from "./middlewares/getMethod";
+import { requestTime } from "./middlewares/requestTime";
 import itemRouter from "./routes/items";
 import productsRouter from "./routes/products";
+import errorHandler from "./error-handler";
 const app = express();
 
 //--------------------Middleware----------------------//
@@ -21,5 +22,9 @@ app.use(requestTime);
 app.use("/api/items", itemRouter);
 
 app.use("/api/products", productsRouter);
+
+//Global error put under route api
+//Global error
+app.use(errorHandler);
 
 export default app;

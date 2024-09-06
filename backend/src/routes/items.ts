@@ -6,7 +6,7 @@ import {
   updateAllItem,
   updateSingleItem,
   deleteItem,
-} from "../controller/items";
+} from "../controllers/items";
 const router = Router();
 
 //get single item
@@ -19,7 +19,7 @@ router.get("/", getAllItems);
 router.post("/", createItem);
 
 //update all item
-router.put("/:id" , updateAllItem )
+router.put("/:id", updateAllItem);
 
 //update single item
 router.patch("/:id", updateSingleItem);
