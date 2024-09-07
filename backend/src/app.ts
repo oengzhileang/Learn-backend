@@ -3,7 +3,7 @@ import { getRequestMethod } from "./middlewares/getMethod";
 import { requestTime } from "./middlewares/requestTime";
 import itemRouter from "./routes/items";
 import productsRouter from "./routes/products";
-import errorHandler from "./error-handler";
+import errorHandler from "../src/middlewares/error-handler";
 const app = express();
 
 //--------------------Middleware----------------------//

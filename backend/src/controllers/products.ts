@@ -2,7 +2,7 @@ import { MongoError } from "mongodb";
 import Products from "../models/products";
 import { Request, Response, NextFunction } from "express";
 import mongoose from "mongoose";
-import { AppError } from "../error-handler";
+import { AppError } from "../middlewares/error-handler";
 //controller is function for write business logic
 
 //get all product
